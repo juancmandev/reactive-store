@@ -9,3 +9,8 @@ body {
 .main {
   padding: 128px 24px 64px;
 }
+
+a {
+  color: #fff;
+  text-decoration: none;
+}

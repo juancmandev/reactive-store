@@ -1,10 +1,14 @@
-import Typography from '@mui/material/Typography';
+import { Typography } from '@mui/material';
+import ProductCard from '../components/ProductCard';
 
 const Home = () => {
   return (
-    <Typography variant='body1' color='initial'>
-      Home
-    </Typography>
+    <>
+      <ProductCard />
+      <Typography variant='body1' color='initial'>
+        Home
+      </Typography>
+    </>
   );
 };
 
