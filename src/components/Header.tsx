@@ -1,25 +1,37 @@
-import { Typography, AppBar, Toolbar, IconButton, Stack } from '@mui/material';
+import {
+  Typography,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Tooltip,
+} from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { UserHeaderContainer } from '../styles/';
+import { UserHeaderContainer } from '../styles/styledComponents';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Header = () => {
   return (
     <AppBar>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
-        <NavLink to='/'>
-          <Typography variant='h5'>Reactive Shop</Typography>
-        </NavLink>
-        <UserHeaderContainer>
-          <NavLink to='/login'>
-            <IconButton>
-              <AccountCircleIcon fontSize='large' sx={{ color: '#fff' }} />
-            </IconButton>
+        <Tooltip title='Home'>
+          <NavLink to='/'>
+            <Typography variant='h5'>Reactive Shop</Typography>
           </NavLink>
-          <IconButton>
-            <ShoppingCartIcon fontSize='large' sx={{ color: '#fff' }} />
-          </IconButton>
+        </Tooltip>
+        <UserHeaderContainer>
+          <Tooltip title='Account'>
+            <NavLink to='/account'>
+              <IconButton>
+                <AccountCircleIcon fontSize='large' sx={{ color: '#fff' }} />
+              </IconButton>
+            </NavLink>
+          </Tooltip>
+          <Tooltip title='Shopping Cart'>
+            <IconButton>
+              <ShoppingCartIcon fontSize='large' sx={{ color: '#fff' }} />
+            </IconButton>
+          </Tooltip>
         </UserHeaderContainer>
       </Toolbar>
     </AppBar>

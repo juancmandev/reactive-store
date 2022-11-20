@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Main from '../layouts/Main';
 import Home from '../pages/Home';
-import Login from '../pages/Login';
+import Account from '../pages/Account';
 import '../styles/global.css';
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     <Main>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/account' element={<Account />} />
       </Routes>
     </Main>
   );
