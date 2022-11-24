@@ -33,7 +33,7 @@ const Account = () => {
   };
 
   return (
-    <Stack sx={{ width: 'max-content', margin: '0 auto' }}>
+    <Stack sx={{ width: 'max-content', margin: '0 auto', minHeight: '78vh' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs
           value={tab}

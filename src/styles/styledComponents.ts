@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const ProductCardsContainer = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: space-between;
+  column-gap: 20px;
+  row-gap: 80px;
+
+  @media screen and (max-width: 682px) {
+    justify-content: center;
+  }
+`;
+
 export const UserHeaderContainer = styled.section`
   display: flex;
   gap: 12px;
@@ -28,4 +40,13 @@ export const HelperErrorText = styled.p`
   margin-right: 14px;
   margin-bottom: 0;
   margin-left: 14px;
+`;
+
+export const FooterStyle = styled.footer`
+  width: 100%;
+  height: 80px;
+  position: relative;
+  bottom: 0;
+  color: #fff;
+  background-color: #1976d2;
 `;

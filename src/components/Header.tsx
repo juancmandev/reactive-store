@@ -17,7 +17,7 @@ const Header = () => {
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <Tooltip title='Home'>
           <NavLink to='/'>
-            <Button variant='text' sx={{ textTransform: 'none' }}>
+            <Button variant='text' sx={{ textTransform: 'none', padding: 0 }}>
               <Typography color='#fff' variant='h5'>
                 Reactive Shop
               </Typography>
