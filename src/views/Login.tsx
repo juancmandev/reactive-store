@@ -34,6 +34,7 @@ const Login = () => {
     initialErrors: { email: '', password: '' },
     validationSchema: Yup.object(validationSchema()),
     onSubmit: () => {
+      setShowPassword(false);
       console.log('Valid!');
     },
   });

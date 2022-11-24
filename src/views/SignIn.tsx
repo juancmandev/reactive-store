@@ -38,6 +38,8 @@ const SignIn = () => {
     initialErrors: { email: '', password: '', confirmPassword: '' },
     validationSchema: Yup.object(validationSchema()),
     onSubmit: () => {
+      setShowPassword(false);
+      setShowConfirmPassword(false);
       console.log('Valid!');
     },
   });
