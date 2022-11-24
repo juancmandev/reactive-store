@@ -4,6 +4,7 @@ import {
   Toolbar,
   IconButton,
   Tooltip,
+  Button,
 } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -16,7 +17,11 @@ const Header = () => {
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         <Tooltip title='Home'>
           <NavLink to='/'>
-            <Typography variant='h5'>Reactive Shop</Typography>
+            <Button variant='text' sx={{ textTransform: 'none' }}>
+              <Typography color='#fff' variant='h5'>
+                Reactive Shop
+              </Typography>
+            </Button>
           </NavLink>
         </Tooltip>
         <UserHeaderContainer>
@@ -28,9 +33,11 @@ const Header = () => {
             </NavLink>
           </Tooltip>
           <Tooltip title='Shopping Cart'>
-            <IconButton>
-              <ShoppingCartIcon fontSize='large' sx={{ color: '#fff' }} />
-            </IconButton>
+            <NavLink to='/shopping-cart'>
+              <IconButton>
+                <ShoppingCartIcon fontSize='large' sx={{ color: '#fff' }} />
+              </IconButton>
+            </NavLink>
           </Tooltip>
         </UserHeaderContainer>
       </Toolbar>

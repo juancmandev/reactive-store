@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Main from '../layouts/Main';
 import Home from '../pages/Home';
 import Account from '../pages/Account';
+import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import '../styles/global.css';
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/account' element={<Account />} />
+        <Route path='/shopping-cart' element={<ShoppingCart />} />
       </Routes>
     </Main>
   );
