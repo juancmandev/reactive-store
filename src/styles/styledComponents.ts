@@ -50,3 +50,53 @@ export const FooterStyle = styled.footer`
   color: #fff;
   background-color: #1976d2;
 `;
+
+export const ShoppingCartList = styled.ul`
+  padding: 24px 0px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 592px);
+  column-gap: 28px;
+  row-gap: 32px;
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media screen and (max-width: 516px) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+`;
+
+export const ShoppingCartItemList = styled.li`
+  max-width: 592px;
+  padding: 4px 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 16px;
+  border-radius: 4px;
+
+  @media screen and (max-width: 516px) {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+  }
+`;
+
+export const ShoppingCartImage = styled.img`
+  width: 260px;
+  height: auto;
+  border-radius: 4px;
+`;
+
+export const ShoppingCartDescription = styled.section`
+  display: grid;
+  grid-template-rows: 0.8fr 0.2fr 2fr;
+`;
+
+export const ShoppingCartActions = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 0.1fr;
+  align-items: flex-start;
+  column-gap: 4px;
+`;

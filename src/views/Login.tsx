@@ -11,7 +11,7 @@ import {
   IconButton,
   Button,
 } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -22,6 +22,7 @@ import {
 } from '../styles/styledComponents';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const validationSchema = () => ({
@@ -35,7 +36,8 @@ const Login = () => {
     validationSchema: Yup.object(validationSchema()),
     onSubmit: () => {
       setShowPassword(false);
-      console.log('Valid!');
+
+      navigate('/');
     },
   });
 

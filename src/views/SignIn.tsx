@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ChangeEvent } from 'react';
 import {
   Paper,
   Stack,
@@ -12,6 +11,7 @@ import {
   IconButton,
   Button,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -24,6 +24,8 @@ import {
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   const validationSchema = () => ({
     email: Yup.string().email('Email not valid').required('Email required'),
@@ -40,7 +42,8 @@ const SignIn = () => {
     onSubmit: () => {
       setShowPassword(false);
       setShowConfirmPassword(false);
-      console.log('Valid!');
+
+      navigate('/');
     },
   });
 
