@@ -12,7 +12,7 @@ export const ProductCardsContainer = styled.ul`
   }
 `;
 
-export const UserHeaderContainer = styled.section`
+export const UserHeaderContainer = styled.nav`
   display: flex;
   gap: 12px;
 `;

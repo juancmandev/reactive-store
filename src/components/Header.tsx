@@ -7,14 +7,33 @@ import {
   Button,
 } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { UserHeaderContainer } from '../styles/styledComponents';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Header = () => {
+  const navigationItems = [
+    {
+      path: '/account',
+      icon: <AccountCircleIcon fontSize='large' color='inherit' />,
+      title: 'Account',
+    },
+    {
+      path: '/favorites',
+      icon: <FavoriteOutlinedIcon fontSize='large' color='inherit' />,
+      title: 'Favorites',
+    },
+    {
+      path: '/shopping-cart',
+      icon: <ShoppingCartIcon fontSize='large' color='inherit' />,
+      title: 'Shopping Cart',
+    },
+  ];
+
   return (
     <AppBar>
-      <Toolbar sx={{ justifyContent: 'space-between' }}>
+      <Toolbar sx={{ justifyContent: 'space-between', padding: '0 28px' }}>
         <Tooltip title='Home'>
           <NavLink to='/'>
             <Button variant='text' sx={{ textTransform: 'none', padding: 0 }}>
@@ -25,20 +44,20 @@ const Header = () => {
           </NavLink>
         </Tooltip>
         <UserHeaderContainer>
-          <Tooltip title='Account'>
-            <NavLink to='/account'>
-              <IconButton>
-                <AccountCircleIcon fontSize='large' sx={{ color: '#fff' }} />
-              </IconButton>
-            </NavLink>
-          </Tooltip>
-          <Tooltip title='Shopping Cart'>
-            <NavLink to='/shopping-cart'>
-              <IconButton>
-                <ShoppingCartIcon fontSize='large' sx={{ color: '#fff' }} />
-              </IconButton>
-            </NavLink>
-          </Tooltip>
+          {navigationItems.map((item) => (
+            <Tooltip key={item.title} title={item.title}>
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive ? '#33bfff' : '#fff',
+                })}
+                to={item.path}>
+                <IconButton
+                  sx={{ color: 'inherit', backgroundColor: 'inherit' }}>
+                  {item.icon}
+                </IconButton>
+              </NavLink>
+            </Tooltip>
+          ))}
         </UserHeaderContainer>
       </Toolbar>
     </AppBar>

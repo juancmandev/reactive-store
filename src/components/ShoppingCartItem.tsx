@@ -4,7 +4,6 @@ import {
   IconButton,
   Tooltip,
   Popover,
-  Stack,
   List,
   ListItemButton,
   ListItem,
@@ -65,7 +64,7 @@ const ShoppingCartItem = () => {
           vertical: 'bottom',
           horizontal: 'left',
         }}>
-        <List>
+        <List sx={{ p: 0 }}>
           <ListItemButton>
             <ListItem sx={{ display: 'flex', gap: '12px' }}>
               <RemoveShoppingCartIcon />
